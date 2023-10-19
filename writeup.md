@@ -32,7 +32,9 @@ res = np.clip(res.sum(axis=0), 0, 255).astype(np.uint8)
 cv2.imwrite('res.jpg', res)
 ```
 得到图片
+
 ![](./resources/一眼盯帧/res.jpg)
+
 看起来像凯撒密码
 ```python
 s = 'synt{unirshangtrrxtnzr}'
