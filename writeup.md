@@ -1,11 +1,15 @@
-# PKU GeekGame 3rd Writeup by RayW
+<h1> PKU GeekGame 3rd Writeup by RayW </h1>
 
-## Tutorial
+<h2> Tutorial </h2>
+
+<details>
+
+<h3> 一眼盯帧 </h3>
 
 <details>
 
 <summary>
-    <b>一眼盯帧</b>
+    <b>flag</b>
 </summary>
 
 读一下gif文件，把各帧加起来
@@ -50,10 +54,12 @@ flag{havefunatgeekgame}
 
 </details>
 
+<h3> 小北问答!!!!! </h3>
+
 <details>
 
 <summary>
-    <b>小北问答!!!!!</b>
+    <b>flag 1 & flag 2</b>
 </summary>
 
 |Question |Answer | Evidence|
@@ -65,7 +71,7 @@ flag{havefunatgeekgame}
 |5. 在 2011 年 1 月，Bilibili 游戏区下共有哪些子分区？（按网站显示顺序，以半角逗号分隔）|`游戏视频,游戏攻略·解说,Mugen,flash游戏`|https://web.archive.org/web/20110102140319/http://bilibili.us/video/game.html|
 |6. [这个照片](https://prob18.geekgame.pku.edu.cn/static/osint-challenge.jpg)中出现了一个大型建筑物，它的官方网站的域名是什么？（照片中部分信息已被有意遮挡）|`philharmonie.lu`|See below|
 
-### Q4
+<h4> Q4 </h4>
 
 ```python
 from unicategories import categories
@@ -94,7 +100,7 @@ print(len(DISALLOWED_CHARS))
 由于`README`里提到安装`Python>=3.8`，盲猜实际运行环境为`Python=3.8`
 
 
-### Q6
+<h4> Q6 </h4>
 
 用Google搜裁剪后的图得到答案为卢森堡音乐厅
 
@@ -104,30 +110,33 @@ print(len(DISALLOWED_CHARS))
 
 </details>
 
-## Misc
+</details>
+
+<h2> Misc </h2>
+
+<details>
+
+<h3> Z公司的服务器 </h3>
 
 <details>
 
 <summary>
-    <b>Z公司的服务器</b>
+    <b>flag 1</b>
 </summary>
-
-### flag 1
 
 打开终端看到`*B00000000000000`，搜索发现这是`rz`命令报错的结果，结合题目里提到的<b>有一种古老的方法</b>，搜关键词`ssh rz`，时间定在2013-2014年，发现需要使用支持ZModem的telnet/ssh客户端，比如[SecureCRT](https://www.vandyke.com/products/securecrt/)，把connection protocal设置为raw连接终端，按照[此文](https://blog.csdn.net/shaochenshuo/article/details/26398445)操作即可得到flag
 
 </details>
 
+<h3> 基本功 </h3>
 
 <details>
 
 <summary>
-    <b>基本功</b>
+    <b>flag 1</b>
 </summary>
 
 查看两个压缩包，里面的文件压缩方法均为`Store`，加密算法均为`ZipCrypto`，可以用[bkcrack](https://github.com/kimci86/bkcrack)破解
-
-### flag 1
 
 Google搜素`chromedriver_linux64 5.57MB`可以查到相应版本号`89.0.4389.23`，下载[这个文件](https://chromedriver.storage.googleapis.com/index.html?path=89.0.4389.23/)，安排文件如下
 ```
@@ -146,7 +155,13 @@ bkcrack-1.5.0-win64\bkcrack.exe -C challenge_1.zip -k a7663027 e40b963d 0dcb4cc4
 ```
 即可得到一个解压密码为`easy`的`challenge_1_new.zip`文件，解压可得flag。
 
-### flag 2
+</details>
+
+<details>
+
+<summary>
+    <b>flag 2</b>
+</summary>
 
 把`pcapng`格式的header可以确定得有第8-11字节`4D3C2B1A`（小端模式）和第16-23字节`FFFFFFFFFFFFFFFF`，故用以下命令
 ```bash
@@ -159,13 +174,13 @@ bkcrack-1.5.0-win64\bkcrack.exe -C challenge_2.zip -k cf6943b2 e9343f70 30ab24f7
 
 </details>
 
+<h3> Dark Room </h3>
+
 <details>
 
 <summary>
-    <b>Dark Room</b>
+    <b>flag 1</b>
 </summary>
-
-### flag 1
 
 徒手玩几轮得到地图
 ```
@@ -207,8 +222,13 @@ bkcrack-1.5.0-win64\bkcrack.exe -C challenge_2.zip -k cf6943b2 e9343f70 30ab24f7
 
 题目要求3s连一次，连续三次都加san值的概率1/1000，没事儿的时候挂着[这玩意儿](./resources/Dark%20Room/flag1.py)刷flag即可
 
+</details>
 
-### flag 2
+<details>
+
+<summary>
+    <b>flag 2</b>
+</summary>
 
 进入`Flag Room`，可以输入的指令多了一条`getflag`，要求猜测`public key`，当我们输入非数字时会得到以下结果
 ```
@@ -229,13 +249,13 @@ ValueError: invalid literal for int() with base 10: 'un89q'
 
 </details>
 
+<h3> 麦恩·库拉夫特 </h3>
+
 <details>
 
 <summary>
-    <b>麦恩·库拉夫特</b>
+    <b>flag 1 & flag 2</b>
 </summary>
-
-### flag 1 & flag 2
 
 用[NBTExplorer](https://github.com/jaquadro/NBTExplorer/releases)打开存档文件夹，搜关键词`flag{`即可
 
@@ -243,7 +263,13 @@ ValueError: invalid literal for int() with base 10: 'un89q'
 
 ![](./resources/麦恩·库拉夫特/flag2.png)
 
-### flag 3
+</details>
+
+<details>
+
+<summary>
+    <b>flag 3</b>
+</summary>
 
 注意到前两个flag都写在告示牌上，盲猜与第三个flag有关的提示也会写在告示牌上，搜关键词`minecraft:sign`，可以发现
 
@@ -262,21 +288,31 @@ ValueError: invalid literal for int() with base 10: 'un89q'
 
 </details>
 
-## Web
+</details>
+
+<h2> Web </h2>
+
+<details>
+
+<h3> Emoji Wordle </h3>
 
 <details>
 
 <summary>
-    <b>Emoji Wordle</b>
+    <b> flag 1 </b>
 </summary>
-
-### flag 1
 
 [这个地方](https://unicode.org/Public/emoji/15.1/emoji-test.txt)可以查到所有的emoji，此外由于flag 1的答案是固定的，所以相当于可以试无数次
 
 一个可以尝试无数次且输入范围给定了的wordle破解起来不过是[无脑体力活](./resources/Emoji%20Wordle/processing-flag1.ipynb)，用来打发上课时间刚刚好（确信
 
-### flag 2
+</details>
+
+<details>
+
+<summary>
+    <b> flag 2 </b>
+</summary>
 
 进入网页查看cookie，发现Name为`PLAY_SESSION`对应的值很有意思
 ```
@@ -290,21 +326,30 @@ eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImxldmVsIjoiMiIsInJlbWFpbmluZ19ndWVzc2VzIjoiOCI
 
 </details>
 
-## Binary
+</details>
 
+<h2> Binary </h2>
+
+<details>
+
+<h3> 汉化绿色版免费下载 </h3>
 
 <details>
 
 <summary>
-    <b>汉化绿色版免费下载</b>
+    <b>flag 1</b>
 </summary>
 
 
-### flag 1
-
 用[xp3viewer](https://github.com/yangg1g/unpacktools/tree/master/XP3Viewer)解包`data.xp3`文件，在`scenario/done.ks`里可以找到flag 1
 
-### flag 2
+</details>
+
+<details>
+
+<summary>
+    <b>flag 2</b>
+</summary>
 
 用[KirikiriDescrambler](https://github.com/arcusmaximus/KirikiriTools/releases)解包`savedata/data0.kdt`文件和`savedata/datasu.ksd`文件
 
@@ -323,20 +368,27 @@ h = h % 19260817
 
 </details>
 
+</details>
 
-## Algorithm
+<h2> Algorithm </h2>
+
+<h3> 关键词过滤喵，谢谢喵 </h3>
 
 <details>
 
 <summary>
-    <b>关键词过滤喵，谢谢喵</b>
+    <b>flag 1 喵</b>
 </summary>
-
-### flag 1 喵
 
 只要把所有字符转换成`a`喵，然后数`a`的个数喵，那么只要把连续的一千个`a`换成`d`喵，连续一百个`a`换成`c`喵，连续十个`a`换成`b`喵，然后把`a{9}, b{9}, c{9}, d{9}`都转换成`9`喵，……，把`a{1}, b{1}, c{1}, d{1}`都转换成`1`喵，在转换之前特判一些补零的地方即可喵，具体参见[喵](resources/关键词过滤喵，谢谢喵/flag1/flag1.txt)，谢谢喵
 
-### flag 2 喵
+</details>
+
+<details>
+
+<summary>
+    <b>flag 2 喵</b>
+</summary>
 
 从题目中知道喵，输入的不含emoji喵，所以对每一行喵，用形如`re.compile(r'(...)').sub(r'\1😇\1')`的指令复制一遍喵，中间用emoji分割喵，再把emoji之后的内容用flag 1的方法转换成长度喵，每一行的内容就变成`content😇length`了喵
 
@@ -348,23 +400,35 @@ h = h % 19260817
 
 </details>
 
+<h3> 小章鱼的曲奇 </h3>
+
 <details>
 
 <summary>
-    <b>小章鱼的曲奇</b>
+    <b>flag 1</b>
 </summary>
-
-### flag 1
 
 `MT19937Predictor`需要624个已知的顺序32位数来预测接下来的随机数，而我们恰好有625个，世上怎么会有这么巧的事🥰
 
 所以只需要用`MT19937Predictor`预测随机数再与原来的数字做异或即可[[代码]](resources/小章鱼的曲奇/flag1/flag1.ipynb)（写得依托DB，毕竟我对Python中`bytes`、`str`、`int(hex)`的转换与处理手法的理解是糊状的）
 
-### flag 2
+</details>
+
+<details>
+
+<summary>
+    <b>flag 2</b>
+</summary>
 
 用跟flag 1一模一样的代码就直接跑出来了（虽然不知道为什么）
 
-### flag 3 [提示放出后解出]
+</details>
+
+<details>
+
+<summary>
+    <b>flag 3 [提示放出后解出]</b>
+</summary>
 
 非预期解就是输出的第一个数，出题人不慎少判断的条件是输入的数字个数与`rounds_of_curses`的对比
 
@@ -372,13 +436,13 @@ h = h % 19260817
 
 </details>
 
+<h3> 华维码 </h3>
+
 <details>
 
 <summary>
-    <b>华维码</b>
+    <b>flag 1</b>
 </summary>
-
-### flag 1
 
 先把25个小块都[切出来](./resources/华维码/flag1/hard.py)，再根据[二维码编码规则](https://blog.csdn.net/search_129_hr/article/details/120796256)在PPT里手工拼出[半成品](resources/华维码/flag1/flag1_part.png)，剩余的块交给[暴力枚举](resources/华维码/flag1/hard-decode.ipynb)即可
 
