@@ -474,7 +474,7 @@ a_public_string deadbeef 41add590 41add610 0 0 1bf52 deadbeef 56a94b70 65765f61 
 
 `MT19937Predictor`需要624个已知的顺序32位数来预测接下来的随机数，而我们恰好有625个，世上怎么会有这么巧的事🥰
 
-所以只需要用`MT19937Predictor`预测随机数再与原来的数字做异或即可[[代码]](resources/小章鱼的曲奇/flag1/flag1.ipynb)（写得依托DB，毕竟我对Python中`bytes`、`str`、`int(hex)`的转换与处理手法的理解是糊状的）
+所以只需要用`MT19937Predictor`预测随机数再与原来的数字做异或即可[[代码]](resources/小章鱼的曲奇/flag1/flag1.ipynb)（写得依托DB，原因是我对Python中`bytes`、`str`、`int(hex)`的转换与处理手法的理解遥遥领先）
 
 </details>
 
