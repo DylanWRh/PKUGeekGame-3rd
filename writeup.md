@@ -372,6 +372,8 @@ h = h % 19260817
 
 <h2> Algorithm </h2>
 
+<details>
+
 <h3> 关键词过滤喵，谢谢喵 </h3>
 
 <details>
@@ -450,3 +452,4 @@ h = h % 19260817
 
 </details>
 
+</details>
