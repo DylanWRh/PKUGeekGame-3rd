@@ -510,8 +510,6 @@ a_public_string deadbeef 41add590 41add610 0 0 1bf52 deadbeef 56a94b70 65765f61 
 
 先把25个小块都[切出来](./resources/华维码/flag1/hard.py)，再根据[二维码编码规则](https://blog.csdn.net/search_129_hr/article/details/120796256)在PPT里手工拼出[半成品](resources/华维码/flag1/flag1_part.png)，剩余的块交给[暴力枚举](resources/华维码/flag1/hard-decode.ipynb)即可
 
-甚至不需要再费心思去想怎么解华容道（
-
 </details>
 
 </details>
