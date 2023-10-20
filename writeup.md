@@ -308,7 +308,7 @@ ValueError: invalid literal for int() with base 10: 'un89q'
 
 [这个地方](https://unicode.org/Public/emoji/15.1/emoji-test.txt)可以查到所有的emoji，此外由于flag 1的答案是固定的，所以相当于可以试无数次
 
-一个可以尝试无数次且输入范围给定了的wordle破解起来不过是[无脑体力活](./resources/Emoji%20Wordle/processing-flag1.ipynb)，用来打发上课时间刚刚好（确信
+一个可以尝试无数次且输入范围给定了的wordle破解起来不过是[无脑体力活](./resources/Emoji%20Wordle/processing-flag1.ipynb)罢了
 
 </details>
 
