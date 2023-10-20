@@ -466,6 +466,38 @@ a_public_string deadbeef 41add590 41add610 0 0 1bf52 deadbeef 56a94b70 65765f61 
 
 </details>
 
+<h3> 未来磁盘 </h3>
+
+<details>
+
+<summary>
+    <b>flag 1 [放出提示后解出]</b>
+</summary>
+
+解压两次得到一个7GB左右的文件，用010 Editor打开后找周期性pattern（指用肉眼观察然后把感觉特殊的地方全文检索一遍）
+
+可以找到前半部分重复次数很多的周期性pattern为
+
+![](resources/未来磁盘/flag1_pattern_u1.png)
+
+![](resources/未来磁盘/flag1_pattern_u2.png)
+
+把这中间的东西全删掉
+
+后半部分重复次数很多的周期性pattern为
+
+![](resources/未来磁盘/flag1_pattern_a1.png)
+
+![](resources/未来磁盘/flag1_pattern_a2.png)
+
+把这中间的东西也全删掉，保存后得到一个大小40KB左右的文件，无视CRC校验错误把它解压后打开即可找到flag
+
+![](resources/未来磁盘/flag1_flag.png)
+
+flag 2解压两遍的文件40G，电脑带不动，遂放弃（
+
+</details>
+
 <h3> 小章鱼的曲奇 </h3>
 
 <details>
