@@ -261,6 +261,8 @@ ValueError: invalid literal for int() with base 10: 'un89q'
 
 用[NBTExplorer](https://github.com/jaquadro/NBTExplorer/releases)打开存档文件夹，搜关键词`flag{`即可
 
+显然，这是非预期解（
+
 ![](./resources/麦恩·库拉夫特/flag1.png)
 
 ![](./resources/麦恩·库拉夫特/flag2.png)
@@ -484,7 +486,7 @@ a_public_string deadbeef 41add590 41add610 0 0 1bf52 deadbeef 56a94b70 65765f61 
     <b>flag 2</b>
 </summary>
 
-用跟flag 1一模一样的代码就直接跑出来了（虽然不知道为什么）
+用跟flag 1一模一样的代码就直接跑出来了（虽然不知道为什么，但是`MT19937Predictor`牛逼就对了）
 
 </details>
 
