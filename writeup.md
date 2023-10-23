@@ -1,4 +1,4 @@
-<h1> PKU GeekGame 3rd Writeup by RayW </h1>
+<h1> PKU GeekGame 3rd Writeup </h1>
 
 <h2> Tutorial </h2>
 
